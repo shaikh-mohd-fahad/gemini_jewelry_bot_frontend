@@ -43,8 +43,12 @@ export default function ChatBox() {
   className="flex-1 border border-black text-black rounded-lg px-4 py-2 text-sm"
   value={input}
   onChange={(e) => setInput(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === 'Enter') sendMessage();
+  }}
   placeholder="Ask about diamonds, rings, or gold..."
 />
+
 
         <button onClick={sendMessage} className="bg-rose-500 text-white px-4 py-2 rounded-lg hover:bg-rose-600 text-sm">
           Send
